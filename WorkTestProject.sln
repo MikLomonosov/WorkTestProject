@@ -9,13 +9,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentatio
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{2A615AB2-F95F-4F2D-BA39-7540605FCB3E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkTestProject.Domain", "WorkTestProject.Domain\WorkTestProject.Domain.csproj", "{FCFA6D99-1C8D-4D88-BC5C-5C60FB16E759}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorkTestProject.Domain", "WorkTestProject.Domain\WorkTestProject.Domain.csproj", "{FCFA6D99-1C8D-4D88-BC5C-5C60FB16E759}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkTestProject.Application", "WorkTestProject.Application\WorkTestProject.Application.csproj", "{6B712C4B-76B1-4841-94C5-4DB37CAF48D6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorkTestProject.App", "WorkTestProject.Application\WorkTestProject.App.csproj", "{6B712C4B-76B1-4841-94C5-4DB37CAF48D6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkTestProject.Persistence", "WorkTestProject.Persistence\WorkTestProject.Persistence.csproj", "{8742AEA9-061E-47EE-A3B2-E4BB3F8889E4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorkTestProject.Persistence", "WorkTestProject.Persistence\WorkTestProject.Persistence.csproj", "{8742AEA9-061E-47EE-A3B2-E4BB3F8889E4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkTestProject.Desktop", "WorkTestProject.Desktop\WorkTestProject.Desktop.csproj", "{144AE510-6617-4B97-9AE4-D4637F9450AF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorkTestProject.Desktop", "WorkTestProject.Desktop\WorkTestProject.Desktop.csproj", "{144AE510-6617-4B97-9AE4-D4637F9450AF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

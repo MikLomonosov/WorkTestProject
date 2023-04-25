@@ -14,15 +14,15 @@ namespace WorkTestProject.Desktop
     /// </summary>
     public partial class App : Application
     {
-        private MainWindowViewModels startViewModel;
+        private MainWindowViewModels _startViewModel;
         protected async override void OnStartup(StartupEventArgs e)
         {
             base.OnStartup(e);
 
-            startViewModel = new MainWindowViewModels();
+            _startViewModel = new MainWindowViewModels();
             new MainWindow
             {
-                DataContext = startViewModel
+                DataContext = _startViewModel
             }.Show();
         }
     }

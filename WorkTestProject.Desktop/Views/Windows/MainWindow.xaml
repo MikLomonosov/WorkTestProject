@@ -21,9 +21,26 @@
             </DataTemplate>
         </Grid.Resources>
 
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="10*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Name="BackToTheFuture"
+              Grid.Row="0">
+            <Button Content="Back"
+                    Command="{Binding ToStartMenu}"
+                    Cursor="Hand"
+                    Width="150"
+                    Height="30"
+                    VerticalAlignment="Top"
+                    Visibility="{Binding BackMenuButtonVisibility}"/>
+        </Grid>
+
         <Grid x:Name="ContentGrid"
               Height="400"
-              VerticalAlignment="Bottom">
+              VerticalAlignment="Bottom"
+              Grid.Row="1">
             <ContentControl Content="{Binding CurrentContent}"/>
         </Grid>
     </Grid>

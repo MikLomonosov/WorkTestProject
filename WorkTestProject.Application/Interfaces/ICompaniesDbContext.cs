@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using WorkTestProject.Domain;
 
-namespace WorkTestProject.Application.Interfaces
+namespace WorkTestProject.App.Interfaces
 {
     public interface ICompaniesDbContext
     {

@@ -12,15 +12,12 @@ namespace WorkTestProject.Desktop.ViewModels.BaseVM
     {
         #region INPC
         public event PropertyChangedEventHandler? PropertyChanged;
+
         protected virtual void OnPropertyChanged([CallerMemberName] string property = "")
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));
         }
         #endregion
 
-        protected BaseViewModel ChangeContext(BaseViewModel newContext)
-        {
-            return newContext;
-        }
     }
 }
