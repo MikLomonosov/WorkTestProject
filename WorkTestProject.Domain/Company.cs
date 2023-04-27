@@ -7,11 +7,10 @@ using System.Threading.Tasks;
 
 namespace WorkTestProject.Domain
 {
-    [Table("Test$")]
+    [Table("Companies")]
     public class Company
     {
-        public int Id { get; set; }
-        public string INN { get; set; }
+        public long INN { get; set; }
         public string Name { get; set; }
         public string City { get; set; }
         public string Region { get; set; }

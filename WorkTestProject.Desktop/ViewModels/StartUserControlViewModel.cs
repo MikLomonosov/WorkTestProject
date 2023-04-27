@@ -15,6 +15,7 @@ namespace WorkTestProject.Desktop.ViewModels
     internal class StartUserControlViewModel : BaseViewModel, IChangeableContent
     {
         public event Action<BaseViewModel, string> ChangeContent;
+        private readonly CompanyDbContext _dbContext;
 
         #region commands
         private readonly ICommand _toOpenedCompaniesCommand;
@@ -34,11 +35,16 @@ namespace WorkTestProject.Desktop.ViewModels
         #region constructor
         public StartUserControlViewModel()
         {
+            _dbContext = DbInitializer.Initialize();
+            _dbContext.Database.EnsureCreated();
+
             _toOpenedCompaniesCommand = new RelayCommand(p =>
-                ChangeContentCommandHandler(new OpenedCompaniesUserControlViewModel(), "Visible"));
+                ChangeContentCommandHandler(new OpenedCompaniesUserControlViewModel(_dbContext), "Visible"));
 
             _toClosedCompaniesCommand = new RelayCommand(p =>
-                ChangeContentCommandHandler(new ClosedCompaniesUserControlViewModel(), "Visible"));
+                ChangeContentCommandHandler(new ClosedCompaniesUserControlViewModel(_dbContext), "Visible"));
+
+            _closeDbConnectionCommand = new RelayCommand(p => DbInitializer.Destroy(_dbContext));
         }
         #endregion
 

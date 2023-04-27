@@ -8,7 +8,7 @@ namespace WorkTestProject.App.Queries
 {
     public class CompanyViewModel
     {
-        public string INN { get; set; }
+        public long INN { get; set; }
         public string Name { get; set; }
         public string City { get; set; }
         public string Region { get; set; }

@@ -20,8 +20,6 @@ namespace WorkTestProject.Persistence
         #region methods
         public static CompanyDbContext Initialize()
         {
-            //var appSettingsJson = GetAppSettings();
-            //var connectionString = appSettingsJson["DefaultConnection"];
             var connectionString = GetAppSettings().GetConnectionString("DefaultConnection");
 
             var contextOptions = new DbContextOptionsBuilder<CompanyDbContext>()

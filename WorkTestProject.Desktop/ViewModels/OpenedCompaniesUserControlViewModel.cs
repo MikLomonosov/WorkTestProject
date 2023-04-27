@@ -10,7 +10,6 @@ using System.Threading.Tasks;
 using WorkTestProject.App.Queries;
 using WorkTestProject.Desktop.ViewModels.BaseVM;
 using WorkTestProject.Persistence;
-using WorkTestProject.Persistence.EntityTypeConfiguration;
 
 namespace WorkTestProject.Desktop.ViewModels
 {
@@ -35,10 +34,10 @@ namespace WorkTestProject.Desktop.ViewModels
         #endregion
 
         #region constructor
-        public OpenedCompaniesUserControlViewModel()
+        public OpenedCompaniesUserControlViewModel(CompanyDbContext dbContext)
         {
-            _dbContext = DbInitializer.Initialize();
-            _dbContext.Database.EnsureCreated();
+            _dbContext = dbContext;
+            //_dbContext.Database.EnsureCreated();
 
             _openedCompaniesQuery = new GetOpenedCompaniesQuery(_dbContext);
             OpenedCompanies = new ObservableCollection<CompanyViewModel>(_openedCompaniesQuery.Get());

@@ -14,8 +14,8 @@ namespace WorkTestProject.Persistence.EntityTypeConfiguration
     {
         public void Configure(EntityTypeBuilder<Company> builder)
         {
-            builder.HasKey(company => company.Id);
-            builder.HasIndex(company => company.Id).IsUnique();
+            builder.HasKey(company => company.INN);
+            builder.HasIndex(company => company.INN).IsUnique();
         }
     }
 }

@@ -18,7 +18,6 @@ namespace WorkTestProject.Desktop.ViewModels
         #region fields
         private readonly GetClosedCompaniesQuery _closedCompaniesQuery;
         private readonly CompanyDbContext _dbContext;
-        //public event Action<BaseViewModel, string> ChangeContent;
         #endregion
 
         #region properties
@@ -35,11 +34,11 @@ namespace WorkTestProject.Desktop.ViewModels
         #endregion
 
         #region constructor
-        public ClosedCompaniesUserControlViewModel()
+        public ClosedCompaniesUserControlViewModel(CompanyDbContext dbContext)
         {
 
-            _dbContext = DbInitializer.Initialize();
-            _dbContext.Database.EnsureCreated();
+            _dbContext = dbContext;
+            //_dbContext.Database.EnsureCreated();
 
             _closedCompaniesQuery = new GetClosedCompaniesQuery(_dbContext);
             ClosedCompanies = new ObservableCollection<CompanyViewModel>(_closedCompaniesQuery.Get());
