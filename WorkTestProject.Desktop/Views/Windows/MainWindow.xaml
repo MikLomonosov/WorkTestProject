@@ -4,9 +4,44 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WorkTestProject.Desktop"
+        xmlns:vm="clr-namespace:WorkTestProject.Desktop.ViewModels"
+        xmlns:v="clr-namespace:WorkTestProject.Desktop.Views.UserControls"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="600">
     <Grid>
+        <Grid.Resources>
+            <DataTemplate DataType="{x:Type vm:StartUserControlViewModel}">
+                <v:StartUserControl/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vm:OpenedCompaniesUserControlViewModel}">
+                <v:OpenedCompaniesUserControl/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vm:ClosedCompaniesUserControlViewModel}">
+                <v:ClosedCompaniesUserControl/>
+            </DataTemplate>
+        </Grid.Resources>
 
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="10*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Name="BackToTheFuture"
+              Grid.Row="0">
+            <Button Content="Back"
+                    Command="{Binding ToStartMenu}"
+                    Cursor="Hand"
+                    Width="150"
+                    Height="30"
+                    VerticalAlignment="Top"
+                    Visibility="{Binding BackMenuButtonVisibility}"/>
+        </Grid>
+
+        <Grid x:Name="ContentGrid"
+              Height="400"
+              VerticalAlignment="Bottom"
+              Grid.Row="1">
+            <ContentControl Content="{Binding CurrentContent}"/>
+        </Grid>
     </Grid>
 </Window>
